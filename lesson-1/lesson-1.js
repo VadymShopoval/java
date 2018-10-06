@@ -15,7 +15,6 @@ let appData = {
 };
 
 
-appData.expenses["Money"]= money;
 appData.moneY = money;
 appData.timeData = time;
 console.log(appData);
@@ -29,4 +28,4 @@ appData.expenses[ans3] = ans4;
 console.log(appData);
 let mone1 = money/30;
 console.log(mone1);
-prompt("бюджет на 1 день ", mone1);
+alert( mone1);
