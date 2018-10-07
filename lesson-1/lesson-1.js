@@ -28,4 +28,4 @@ appData.expenses[ans3] = ans4;
 console.log(appData);
 let mone1 = money/30;
 console.log(mone1);
-alert( mone1);
+document.write( " бюджет на день ", mone1);
