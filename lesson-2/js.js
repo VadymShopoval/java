@@ -13,7 +13,7 @@ let appData = {
 // for (let i = 0; i <2; i++) {
 //  let a = prompt("Статья обязательных расходов", ""),
 //      b = +prompt("Во сколько это обойдется? ", "");
-//  if ( (typeof(a))==="string" && (typeof(a)) != null && (typeof(b)) !=null && a != "" && b !="" && a.length<50 ) {
+//  if ( (typeof(a))==="string" && (a != null) && (b !=null) && a != "" && b !="" && a.length<50 ) {
   
 //   console.log("done");
 //   appData.expenses[a] = b;
@@ -43,7 +43,7 @@ do {
     i++;
     let a = prompt("Статья обязательных расходов", ""),
         b = +prompt("Во сколько это обойдется? ", "");
-    if ( (typeof(a))==="string" && (typeof(a)) != null && (typeof(b)) !=null && a != "" && b !="" && a.length<50 ) {
+    if ( (typeof(a))==="string" && (a) != null && b !=null && a != "" && b !="" && a.length<50 ) {
         console.log("done-2");
         appData.expenses[a] = b;
     } else {
@@ -54,7 +54,7 @@ while (i < 2);
   
   
  
-appData.moneY = money;
-appData.moneyPerDay = appData.moneY/ 30;
+appData.budjet = money;
+appData.moneyPerDay = appData.budjet/ 30;
 alert(" бюджет на день " +appData.moneyPerDay);
 console.log(appData);
