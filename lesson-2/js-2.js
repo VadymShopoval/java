@@ -18,10 +18,11 @@ for (let i = 1, wek = 0; i < 8; i++) {
  wek++;
 };
 
-let arr = [4566, 56537, 14846, 75464, 35456, 7547, 3];
+let arr = ["4566", "56537", "14846", '54647', '735456', '547', '3'];
 for (let a = 0; a < 7; a++) {
- number = arr[a];
- console.log(number);
- if () {};
+ 
+ if (arr[a][0] == "3" || arr[a][0] =="7") {
+  console.log(arr[a]);
+ };
 
 };
