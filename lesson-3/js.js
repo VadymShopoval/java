@@ -18,18 +18,20 @@ let appData = {
  savings: true
 
 };
-console.log(appData);
+
 function chooseExpenses() {
     for (let i = 0; i <2; i++) {
         let a = prompt("Статья обязательных расходов", ""),
-        b = +prompt("Во сколько это обойдется? ", "");
-        if ( (typeof(a))==="string" && (a != null) && (b !=null) && a != "" && b !="" && a.length<50 ) {
+            b = +prompt("Во сколько это обойдется? ", "");
+        console.log(((isNaN(b))) +' tet');
+        if ((typeof (a)) === "string" && isNaN(b) ===false && (a != null) && (b != null) && a != "" && b != "" && a.length < 50) {
             console.log("done");
             appData.expenses[a] = b;
         } else {
-            i = -1;
+            i=0;
         }
     }
+    
 }
 chooseExpenses();
 function detectDayBudget() {
@@ -56,23 +58,30 @@ function chooseOptExpenses() {
     for (let i = 0; i <3; i++) {
         let a = prompt("Статья необязательных расходов?", ""),
         b = +prompt("Во сколько это обойдется? ", "");
-        if ( (typeof(a))==="string" && (a != null) && (b !=null) && a != "" && b !="" && a.length<50 ) {
+        if ((typeof (a)) === "string" && isNaN(b) === false && (a != null) && (b !=null) && a != "" && b !="" && a.length<50 ) {
             console.log("Статья необязательных расходов?");
             appData.optionalExpenses[a] = b;
         } else {
-            i = -1;
+            i = 0;
         }
     }
 }
 chooseOptExpenses();
 detectDayBudget();
 function checkSavings() {
-    if (appData.savings == true){
-        let save =+prompt("Какова сумма накоплений",''),
-            percent = +prompt("Под какой процент?","");
-        appData.monthIncome =save/100/12*percent;
-        alert("доход в месяц с вашего депозита: " + appData.monthIncome);
-        //%
+    for (let i = 0; i < 2; i++) {
+        if (appData.savings == true) {
+            let save = +prompt("Какова сумма накоплений", ""),
+                percent = +prompt("Под какой процент?", "");
+            if (isNaN(save) === false && isNaN(percent) === false && (save != null) && (percent != null) && save != "" && percent != "") {
+                console.log("доход в месяц с вашего депозита");
+                appData.monthIncome = save / 100 / 12 * percent;
+                alert("доход в месяц с вашего депозита: " + appData.monthIncome);
+            } else {
+                i = 0;
+            }
+        }
     }
 }
 checkSavings();
+console.log(appData);
