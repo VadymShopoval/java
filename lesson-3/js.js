@@ -78,7 +78,6 @@ function checkSavings() {
             alert("доход в месяц с вашего депозита: " + appData.monthIncome);
         } 
     }
-    
 }
 checkSavings();
 console.log(appData);
