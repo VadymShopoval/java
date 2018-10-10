@@ -69,19 +69,16 @@ function chooseOptExpenses() {
 chooseOptExpenses();
 detectDayBudget();
 function checkSavings() {
-    for (let i = 0; i < 1; i++) {
-        if (appData.savings == true) {
-            let save = +prompt("Какова сумма накоплений", ""),
-                percent = +prompt("Под какой процент?", "");
-            if (isNaN(save) === false && isNaN(percent) === false && (save != null) && (percent != null) && save != "" && percent != "") {
-                console.log("доход в месяц с вашего депозита");
-                appData.monthIncome = save / 100 / 12 * percent;
-                alert("доход в месяц с вашего депозита: " + appData.monthIncome);
-            } else {
-                i--;
-            }
-        }
+    if (appData.savings == true) {
+        let save = +prompt("Какова сумма накоплений", ""),
+            percent = +prompt("Под какой процент?", "");
+        if (isNaN(save) === false && isNaN(percent) === false && (save != null) && (percent != null) && save != "" && percent != "") {
+            console.log("доход в месяц с вашего депозита");
+            appData.monthIncome = save / 100 / 12 * percent;
+            alert("доход в месяц с вашего депозита: " + appData.monthIncome);
+        } 
     }
+    
 }
 checkSavings();
 console.log(appData);
