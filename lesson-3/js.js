@@ -28,7 +28,7 @@ function chooseExpenses() {
             console.log("done");
             appData.expenses[a] = b;
         } else {
-            i=0;
+            i--;
         }
     }
     
@@ -62,14 +62,14 @@ function chooseOptExpenses() {
             console.log("Статья необязательных расходов?");
             appData.optionalExpenses[a] = b;
         } else {
-            i = 0;
+            i--;
         }
     }
 }
 chooseOptExpenses();
 detectDayBudget();
 function checkSavings() {
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 1; i++) {
         if (appData.savings == true) {
             let save = +prompt("Какова сумма накоплений", ""),
                 percent = +prompt("Под какой процент?", "");
@@ -78,7 +78,7 @@ function checkSavings() {
                 appData.monthIncome = save / 100 / 12 * percent;
                 alert("доход в месяц с вашего депозита: " + appData.monthIncome);
             } else {
-                i = 0;
+                i--;
             }
         }
     }
