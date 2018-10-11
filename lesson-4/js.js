@@ -84,15 +84,15 @@ let appData = {
             console.log('Способы доп. заработка: ' +i  );
         });
     },
-    appDataKey: function() {
-    	for (let key in appData) {
-    	    console.log('Наша программа включает в себя данные: ' +key);
-    	    //получайм ключи мисива
-    	}
-    }
-};
+ };
 appData.chooseIncome();
 
+function appDataKey (appData) {
+	for (let key in appData) {
+	    console.log('Наша программа включает в себя данные: ' +key);
+	    //получайм ключи мисива
+	}
+}
 
 console.log(appData);
 
