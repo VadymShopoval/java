@@ -80,8 +80,15 @@ let appData = {
         } else {
             appData.chooseIncome();
         }
-        
+        appData.icnome.forEach(function (i) {
+            console.log('Способы доп. заработка: ' +i  );
+        });
     }
 };
+appData.chooseIncome();
+for (let key in appData) {
+    console.log('Наша программа включает в себя данные: ' +key);
+    //получайм ключи мисива
+}
 
 console.log(appData);
