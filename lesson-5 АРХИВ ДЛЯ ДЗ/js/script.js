@@ -16,3 +16,4 @@ adv[0].remove();
 let promp = prompt('как относится к техник  Apple', ''),
     p = document.getElementById('prompt');
 p.textContent = promp;
+
