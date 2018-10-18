@@ -1,4 +1,6 @@
 let start = document.getElementById('start'),
+
+
   daybudgetValue = document.getElementsByClassName('daybudget-value')[0],
   levelValue = document.getElementsByClassName('level-value')[0],
   expensesValue = document.getElementsByClassName('expenses-value')[0],
