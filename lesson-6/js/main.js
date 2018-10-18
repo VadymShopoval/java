@@ -31,7 +31,7 @@ console.log(month);
 console.log(savings);
 
 let money, time;
-
+countBudgetBtn.disabled = true;
 start.addEventListener('click', function () {
   time = prompt('Введите дату в формате YYYY-MM-DD ', '');
   money = +prompt('Ваш бюджет на месяц', '');
@@ -42,6 +42,7 @@ start.addEventListener('click', function () {
   appData.budjet = money;
   appData.timeData = time;
   budgetValue.textContent = money.toFixed();
+  countBudgetBtn.disabled = false;
   //1970год
   yearValue.value = new Date(Date.parse(time)).getFullYear();
   month.value = new Date(Date.parse(time)).getMonth() + 1;
