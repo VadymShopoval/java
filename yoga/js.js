@@ -70,13 +70,15 @@ window.addEventListener('DOMContentLoaded', function () {
   }
   setClock('timer', deadline);
   // Modal
+  
   let more = document.querySelector('.more'),
       overlay = document.querySelector('.overlay');
       
 
   let body = document.querySelector('body'),
       mor = document.querySelector('.more');
-  body.addEventListener('click', (e)=>{
+      
+  body.addEventListener('click', function (e) {
     let target = e.target;
     if (target.classList == 'description-btn') {
       console.log('class');
