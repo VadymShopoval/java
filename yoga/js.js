@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     }
   }
-  info.addEventListener('click', function(event){
+  info.addEventListener('click', (event)=> {
     let target =event.target;
     if (target && target.classList.contains('info-header-tab')) {
       for (let i = 0; i < tab.length; i++) {
@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   });
   //timer
-  let deadline = '2018-10-21';
+  let deadline = `2018-10-23`;
   function getTimeRemaining(endtime) {
     let t = Date.parse(endtime) - Date.parse(new Date()),
         // Math.floor округля
@@ -76,20 +76,20 @@ window.addEventListener('DOMContentLoaded', function () {
       
 
   let body = document.querySelector('body'),
-      mor = document.querySelector('.more');
+      descriptionBt = document.querySelector('.description-btn');
       
   body.addEventListener('click', function (e) {
     let target = e.target;
     if (target.classList == 'description-btn') {
-      console.log('class');
+      
       overlay.style.display = 'block';
-      this.classList.add('more-splash');
+      descriptionBt.classList.add('more-splash');
       document.body.style.overflow = 'hidden';
     }
     if (target.classList.contains('more')) {
       console.log('butto');
       overlay.style.display = 'block';
-      this.classList.add('more-splash');
+      more.classList.add('more-splash');
       document.body.style.overflow = 'hidden';
     }
     if (target.classList.contains('popup-close')) {
