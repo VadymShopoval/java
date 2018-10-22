@@ -106,7 +106,7 @@ window.addEventListener('DOMContentLoaded', function () {
   };
   let form = document.querySelector('.main-form'),
       input =form.getElementsByTagName('input'),
-      statusMessage = document.captureEvents('div');
+      statusMessage = document.createElement('div');
 
       statusMessage.classList.add('status');
   //PHP
@@ -116,10 +116,15 @@ window.addEventListener('DOMContentLoaded', function () {
     form.appendChild(statusMessage);
 
     let request = new XMLHttpRequest();
+    console.log(request);
     request.open('POST', 'server.php');
-    request.setRequestHeader('Content-Type', 'applicatiom/x-www-form-urlencoded');
-
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    console.log(request);
+    console.log(form);
     let formData = new FormData(form);
+    
+    console.log(formData);
+    console.log(request.send(formData));
     request.send(formData);
     request.addEventListener('readystatechange', function () {
       if (request.readyState < 4) {
@@ -134,9 +139,9 @@ window.addEventListener('DOMContentLoaded', function () {
     for (let i = 0; i <input.length; i++) {
       input[i].value = '';
     }
-  });
+  //});
   //JSON
-  /* form.addEventListener('submit', function (event) {
+/*   form.addEventListener('submit', function (event) {
     event.preventDefault();
     //name ключ
     form.appendChild(statusMessage);
@@ -153,8 +158,9 @@ window.addEventListener('DOMContentLoaded', function () {
     formData.forEach(function(value, key){
       obj[key] = value;
     });
+    console.log(obj);
     let json =JSON.stringify(obj);
-
+    console.log(obj);
     request.send(json);
     request.addEventListener('readystatechange', function () {
       if (request.readyState < 4) {
@@ -168,6 +174,6 @@ window.addEventListener('DOMContentLoaded', function () {
 
     for (let i = 0; i < input.length; i++) {
       input[i].value = '';
-    }
-  }); */
+    } */
+  });
 });
