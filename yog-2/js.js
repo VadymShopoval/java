@@ -122,7 +122,6 @@ window.addEventListener('DOMContentLoaded', function () {
     console.log(request);
     console.log(form);
     let formData = new FormData(form);
-    
     console.log(formData);
     console.log(request.send(formData));
     request.send(formData);
