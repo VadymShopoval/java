@@ -267,11 +267,11 @@ window.addEventListener('DOMContentLoaded', function () {
       });
       let v = 1;
       persons.addEventListener('change', function (){
-        personsSum = +this.value;
+        personsSum = +this.value.replace(/[^0-9\.]/g, '');;
         total = (daysSum + personsSum)* 4000;
-        if(restDays.value == '') {
+        if (persons.value == '' || persons.value == 0) {
           totalValue.innerHTML = 0;
-        } else if (persons.value == ''){
+        } else if (restDays.value == '' || restDays.value == 0 ){
            totalValue.innerHTML = 0;
         } else {
           totalValue.innerHTML = total*v;
