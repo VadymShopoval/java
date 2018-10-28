@@ -1,7 +1,21 @@
+'use strict';
 
-let num = 33721,
+let num = [
+  3,
+  3,
+  7,
+  2,
+  1
+];
 
-n = num*num;
-console.log(n);
-n  **=n;
-console.log(n);
+let result = num.reduce(function (sum, current) {
+  return sum * current
+});
+
+console.log(result);
+
+let resultPow = result ** 3;
+let resultPowString = resultPow + "";
+
+alert(resultPowString[0] + resultPowString[1]);
+
