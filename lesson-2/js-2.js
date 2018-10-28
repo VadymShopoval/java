@@ -42,6 +42,6 @@ let a = [
 
 for (let i = 0; i < a.length; i++) {
   if (a[i][0] == "3" || a[i][0] == "7") {
-    console.log(r[i]);
+    console.log(a[i]);
   }
 }
