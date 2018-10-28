@@ -1,28 +1,47 @@
-let week = ["понедельник", 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
-console.log(week[0])
-for (let i = 1, wek = 0; i < 8; i++) {
+let week = [
+  "Понедельник",
+  "Вторник",
+  "Среда",
+  "Четверг",
+  "Пятница",
+  "Суббота",
+  "Воскресенье"
+];
 
- console.log(i);
- if (wek == 0) {
-  document.write(week[wek].italics() + "</br>");
-  console.log("b");
- } else if (wek < 5) {
-  document.write(week[wek] + "</br>");
-  console.log("bold");
- } else {
-  if (wek > 4) {
-   console.log("italics");
-   document.write(week[wek].bold(), "</br>");
+let date = new Date(),
+  nowDay = date.getDay() - 1;
+if (nowDay = (-1)) {
+  nowDay = 6
+}
+
+week.forEach(function (item, index) {
+
+  if (index == nowDay && (index == 5 || index == 6)) {
+    document.write("<p>" + "<b>" + "<i>" + item + "</i>" + "</b>" + "</p>")
+  } else if (index == nowDay) {
+    document.write("<p>" + "<i>" + item + "</i>" + "</p>")
+  } else if (index == 5 || index == 6) {
+    document.write("<p>" + "<strong>" + item + "</strong>" + "</p>");
+  } else {
+    document.write("<p>" + item + "</p>")
   }
- }
- wek++;
-};
 
-let arr = ["4566", "56537", "14846", '54647', '735456', '547', '3'];
-for (let a = 0; a < 7; a++) {
- 
- if (arr[a][0] == "3" || arr[a][0] =="7") {
-  console.log(arr[a]);
- };
+  console.log(nowDay);
 
-};
+});
+
+let a = [
+  "294844390",
+  "395845",
+  "1057584",
+  "730303",
+  "5850696",
+  "3058565856",
+  "70423345632"
+];
+
+for (let i = 0; i < a.length; i++) {
+  if (a[i][0] == "3" || a[i][0] == "7") {
+    console.log(r[i]);
+  }
+}
