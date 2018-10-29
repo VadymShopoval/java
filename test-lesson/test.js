@@ -21,9 +21,12 @@ describe('arr', function () {
   });
 }); */
 //html
-describe('Таймер', function () {
+describe('Таймер', function (){
   it('Возращает функция обьект?', function () {
     
     assert.typeOf(getTimeRemaining(), 'object');
+  });
+  it('Устанавливаем таймер обратного отсчета', function(){
+    assert.typeOf(setClock("timer", deadline), 'string');
   });
 });

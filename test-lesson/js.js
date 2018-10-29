@@ -316,6 +316,6 @@ let persons =  document.querySelectorAll('.counter-block-input')[0],
         v = this.options[this.selectedIndex].value;
         totalValue.innerHTML = a * v;
       }
-    })
+    });
 //});
 
