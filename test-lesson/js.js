@@ -101,6 +101,7 @@ body.addEventListener('click', function (e) {
     overlay.style.display = 'none';
     more.classList.remove('more-splash');
     document.body.style.overflow = '';
+    
   }
 });
 // Form
@@ -112,12 +113,14 @@ let message = {
 let form = document.querySelector('.main-form'),
   input = form.getElementsByTagName('input'),
   statusMessage = document.createElement('div'),
+  
   ind = document.getElementById('in'),
   form1 = document.getElementById('form');
 
 
 
 statusMessage.classList.add('status');
+
 input[0].addEventListener('input', () => {
   input[0].value = input[0].value.replace(/[^0-9+()]/ig, '');
 
@@ -187,7 +190,8 @@ form.addEventListener('submit', function (event) {
         function clearInput() {
           for (let i = 0; i <input.length; i++) {
           input[i].value = '';
-          } 
+          }
+          
         }
         postData(form1Data)
           .then(() => statusMessage.innerHTML = message.loading )

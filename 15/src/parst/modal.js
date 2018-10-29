@@ -26,7 +26,8 @@ function modal() {
       overlay.style.display = 'none';
       more.classList.remove('more-splash');
       document.body.style.overflow = '';
-      statusMessage.innerHTML = 'ура';
+      console.log(statusMessage);
+      
     }
   });
 }
