@@ -83,7 +83,8 @@ function form() {
           function clearInput() {
             for (let i = 0; i <input.length; i++) {
             input[i].value = '';
-            } 
+            }
+            statusMessage.innerHTML = ' ';
           }
           postData(form1Data)
             .then(() => statusMessage.innerHTML = message.loading )
