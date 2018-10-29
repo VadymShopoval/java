@@ -1,7 +1,7 @@
 //window.addEventListener('load')
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
-  let form  = require("./parst/form.js");
+  let form  = require("./parst/form.js"),
     slider = require("./parst/slider.js"),
     tabs   = require("./parst/tabs.js"),
     timer  = require("./parst/timer.js"),
