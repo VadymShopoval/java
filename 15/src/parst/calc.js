@@ -19,7 +19,7 @@ function calc() {
   });
   let v = 1;
   function perDaus(persons, restDays) {
-    personsSum = +persons.value.replace(/[^0-9\.]/g, '');
+    personsSum = +persons.value.replace(/[^0-9]/g, '');
     total = (daysSum + personsSum)* 4000;
     if (persons.value == '' || persons.value == 0) {
       totalValue.innerHTML = 0;
@@ -27,7 +27,7 @@ function calc() {
         totalValue.innerHTML = 0;
     } else {
       totalValue.innerHTML = total*v;
-      console.log(v);
+      
     }
   }
   persons.addEventListener('change', function (){

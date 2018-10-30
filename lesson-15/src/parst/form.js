@@ -1,4 +1,36 @@
 function form() {
+  //tabs
+   let more = document.querySelector('.more'),
+     overlay = document.querySelector('.overlay');
+
+
+   let body = document.querySelector('body'),
+        mor = document.querySelector('.more');
+
+   body.addEventListener('click', function (e) {
+     let target = e.target;
+     if (target.classList == 'description-btn') {
+       
+       overlay.style.display = 'block';
+       this.classList.add('more-splash');
+       document.body.style.overflow = 'hidden';
+     }
+     if (target.classList.contains('more')) {
+       
+       overlay.style.display = 'block';
+       this.classList.add('more-splash');
+       document.body.style.overflow = 'hidden';
+     }
+     if (target.classList.contains('popup-close')) {
+       overlay.style.display = 'none';
+       more.classList.remove('more-splash');
+       document.body.style.overflow = '';
+       //statusMessage.remove();
+       clearInput();
+       
+
+     }
+   });
   // Form
   let message = {
     loading: 'Загрузка...',
@@ -7,9 +39,12 @@ function form() {
   };
   let form = document.querySelector('.main-form'),
     input = form.getElementsByTagName('input'),
-    statusMessage = document.createElement('div'),
+    
     ind = document.getElementById('in'),
-    form1 = document.getElementById('form');
+    form1 = document.getElementById('form'),
+    inputForm1 = form1.getElementsByTagName('input');
+
+  var statusMessage = document.createElement('div');
 
 
 
@@ -30,11 +65,10 @@ function form() {
     form.appendChild(statusMessage);
 
     let request = new XMLHttpRequest();
-    console.log(request);
+    
     request.open('POST', 'server.php');
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    console.log(request);
-    console.log(form);
+    
     let formData = new FormData(form);
     request.send(formData);
     request.addEventListener('readystatechange', function () {
@@ -51,7 +85,16 @@ function form() {
       input[i].value = '';
     } */
   });
+  function clearInput() {
+    for (let i = 0; i < input.length; i++) {
+      input[i].value = '';
 
+    }
+    statusMessage.innerHTML = ' ';
+
+
+  }
+  
   //JSON form1
     function sendForm(elem) {
     elem.addEventListener('submit', function (event) {
@@ -80,21 +123,25 @@ function form() {
             });
             }
           //end postData
-          function clearInput() {
-            for (let i = 0; i <input.length; i++) {
-            input[i].value = '';
+          function clearТ() {
+            for (let i = 0; i < inputForm1.length; i++) {
+              inputForm1[i].value = '';
+
             }
-            statusMessage.innerHTML = ' ';
+            
+
           }
+        function clearIn() {
+          setTimeout(statusMessage.remove(), 5000);
+        }
           postData(form1Data)
             .then(() => statusMessage.innerHTML = message.loading )
-            .then(()=> {
-              overlay.style.display = 'block';
-              overlay.style.display = 'none';
-              statusMessage.innerHTML = 'ура';
-            })
+            .then(() => statusMessage.innerHTML = message.success)
             .catch(() => statusMessage.innerHTML = message.failure)
-            .then(clearInput)
+            .then(clearТ)
+          clearIn();
+            
+      
           
 
     });
